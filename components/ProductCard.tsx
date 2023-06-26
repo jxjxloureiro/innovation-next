@@ -47,7 +47,7 @@ export function ProductCard() {
             )
           }
           return (
-            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" key={product.codigo_produto}>
               < Card className="w-[350px]" >
                 <CardHeader>
                   <img src={product.imagem_produto} />
