@@ -18,7 +18,7 @@ export function ProductCard() {
   const { state, dispatch } = React.useContext(CartContext);
   const [products, setProducts] = React.useState([]);
 
-  const addToCart = (id: Number, name: String) => {
+  const addToCart = (id: number, name: string) => {
     dispatch({ type: 'ADD_TO_CART', payload: { id, name } });
     toast({
       description: "Adicionado ao carrinho",
@@ -47,7 +47,7 @@ export function ProductCard() {
             )
           }
           return (
-            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" key={product.codigo_produto}>
+            <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" key={product.codigo_produto}>
               < Card className="w-[350px]" >
                 <CardHeader>
                   <img src={product.imagem_produto} />
