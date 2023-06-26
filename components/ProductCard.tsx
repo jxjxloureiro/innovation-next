@@ -41,14 +41,14 @@ export function ProductCard() {
         products.map(product => {
           if (product.estoque_disponivel <= 0) {
             return (
-              <h1>
+              <h1 key={product.codigo_produto}>
                 Fora de estoque
               </h1>
             )
           }
           return (
             <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" key={product.codigo_produto}>
-              < Card className="w-[350px]"  key={product.codigo_produto}>
+              < Card className="w-[350px]" >
                 <CardHeader>
                   <img src={product.imagem_produto} />
                   <CardTitle>{product.nome_produto}</CardTitle>
