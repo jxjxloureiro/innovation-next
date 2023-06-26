@@ -44,7 +44,11 @@ const CartContext = createContext<CartContextType>({
   dispatch: () => {},
 });
 
-const CartProvider = ({ children }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+const CartProvider: React.FC<Props> = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
   useEffect(() => {
@@ -53,7 +57,7 @@ const CartProvider = ({ children }) => {
     };
     const data = localStorage.getItem('cartItems');
     const jsonFromData = JSON.parse(data || "[]");
-    if (data !== null) jsonFromData.forEach(element => {
+    if (data !== null) jsonFromData.forEach((element: { id: number; name: string; }) => {
       addToCart(element.id, element.name)
     });
   }, []);
