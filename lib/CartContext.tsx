@@ -41,7 +41,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-const CartProvider: React.FC = ({ children }) => {
+const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
   useEffect(() => {
