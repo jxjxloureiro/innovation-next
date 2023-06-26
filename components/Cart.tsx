@@ -1,7 +1,7 @@
 import { CartContext, CartItem } from '@/lib/CartContext';
 import React, { useContext, useEffect } from 'react';
 
-const Cart: React.FC = () => {
+const Cart = () => {
   const { state, dispatch } = useContext(CartContext);
 
   const removeFromCart = (item: CartItem) => {
