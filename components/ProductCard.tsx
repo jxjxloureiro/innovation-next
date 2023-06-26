@@ -39,33 +39,33 @@ export function ProductCard() {
     <>
       {
         products.map(product => {
-          if (product.estoque_disponivel <= 0) {
+          if (product["estoque_disponivel"] <= 0) {
             return (
-              <h1 key={product.codigo_produto}>
+              <h1 key={product["codigo_produto"]}>
                 Fora de estoque
               </h1>
             )
           }
           return (
-            <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" key={product.codigo_produto}>
+            <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" key={product["codigo_produto"]}>
               < Card className="w-[350px]" >
                 <CardHeader>
-                  <img src={product.imagem_produto} />
-                  <CardTitle>{product.nome_produto}</CardTitle>
-                  <CardDescription>{product.descricao_produto}</CardDescription>
+                  <img src={product["imagem_produto"]} />
+                  <CardTitle>{product["nome_produto"]}</CardTitle>
+                  <CardDescription>{product['descricao_produto']}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm font-medium leading-none">
-                    {product.caracteristicas_produto}
+                    {product["caracteristicas_produto"]}
                   </p>
                   <br />
                   <p className="text-sm font-medium leading-none bg-red-400">
-                    Estoque: {product.estoque_disponivel}
+                    Estoque: {product["estoque_disponivel"]}
                   </p>
                 </CardContent>
                 <CardFooter className="flex justify-center">
                   <Button onClick={() => {
-                    addToCart(product.codigo_produto, product.nome_produto);
+                    addToCart(product['codigo_produto'], product['nome_produto']);
                   }}>Adicionar ao carrinho</Button>
                 </CardFooter>
               </Card >
